@@ -4,7 +4,7 @@ dd if=/dev/zero of=/tmp/file.dd count=10 bs=1M
 echo "the sample has been created "
 
 echo "start to copy with class 3 (idle)"
-(time ionice -c 3 dd if=/tmp/file.dd of=/tmp/file3.dd iflag=direct && echo "ionice with class 3 (idle) finished" && echo ====================================) &
+(time ionice -c 3 dd if=/tmp/file.dd of=/tmp/file3.dd iflag=direct && echo "" && echo "ionice with class 3 (idle) finished" && echo ====================================) &
 
 echo "start to copy with class 1 (realtime) priority 0"
 (time ionice -c 1 -n 0 dd if=/tmp/file.dd of=/tmp/file1-0.dd iflag=direct && echo "ionice with class 1 (realtime) priority 0 finished" && echo ====================================) &
