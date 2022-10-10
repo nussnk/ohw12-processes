@@ -64,7 +64,7 @@ Vagrant.configure("2") do |config|
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
    config.vm.provision "shell", inline: <<-SHELL
-	echo cqf > /sys/block/sda/queue/scheduler
+	echo cfq > /sys/block/sda/queue/scheduler
   #   apt-get update
   #   apt-get install -y apache2
    SHELL
